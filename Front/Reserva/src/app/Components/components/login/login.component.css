@@ -1,64 +1,281 @@
-/* Layout principal */
-.parent {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    gap: 8px;
-}
-
-/* Área esquerda */
-.div1 {
-    grid-column: 1 / span 2;
-    grid-row: 1 / span 5;
-    background-color: purple;
-    padding-top: 150px;
-    padding-left: 100px;
-}
-
-/* Área do login */
-.div2 {
-    grid-column: 3 / 6;  /* ocupa colunas 3,4,5 */
-    grid-row: 1 / 6;
-    display: flex;
-    justify-content: center; /* centraliza horizontalmente */
-    align-items: center;     /* centraliza verticalmente */
-    padding-top: 150px;
-}
-
-
-/* Formulário */
-.div2 form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-/* Cada campo do formulário */
-.campo {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Opções checkbox e link */
-.options {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Reset básico do HTML */
+/*
+   Reset básico do HTML
+   Esta seção redefine estilos padrão do navegador para garantir consistência entre diferentes navegadores
+*/
 html, body {
-    height: 100%;
-    margin: 0;
+    height: 100%;           /* Faz com que html e body ocupem 100% da altura da viewport */
+    margin: 0;              /* Remove margens padrão */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define uma fonte moderna e legível */
+    background-color: #f5f5f5; /* Cor de fundo cinza claro para a página inteira */
 }
 
-.Botao {
-    background-color: purple;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
+/*
+   Layout principal
+   Define a estrutura de grid para organizar a página
+*/
+.parent {
+    display: grid;                      /* Ativa o display grid para layout em grade */
+    grid-template-columns: repeat(5, 1fr); /* Cria 5 colunas de tamanho igual (1fr = uma fração do espaço disponível) */
+    grid-template-rows: repeat(5, 1fr);    /* Cria 5 linhas de tamanho igual */
+    height: 100vh;                      /* Ocupa 100% da altura da viewport */
+    gap: 0;                             /* Remove espaços entre as células do grid */
+}
 
+/*
+   Área esquerda - Bem-vindo
+   Estiliza a seção roxa à esquerda com mensagem de boas-vindas
+*/
+.div1 {
+    grid-column: 1 / span 2;    /* Posiciona no grid: começa na coluna 1 e ocupa 2 colunas */
+    grid-row: 1 / span 5;       /* Posiciona no grid: começa na linha 1 e ocupa 5 linhas */
+    background: linear-gradient(135deg, #4A00E0 0%, #8E2DE2 100%); /* Gradiente roxo diagonal */
+    color: white;               /* Texto branco para contraste com o fundo roxo */
+    padding: 40px;              /* Espaçamento interno de 40px em todos os lados */
+    display: flex;              /* Ativa flexbox para alinhamento interno */
+    flex-direction: column;     /* Organiza os elementos internos em coluna (vertical) */
+    justify-content: center;    /* Centraliza verticalmente os elementos dentro do container */
+    position: relative;         /* Permite posicionar elementos filhos absolutamente em relação a esta div */
+    overflow: hidden;           /* Esconde qualquer conteúdo que ultrapasse os limites */
+}
+
+/*
+   Pseudoelemento ::before para adicionar um padrão de fundo
+   Cria um efeito visual decorativo atrás do conteúdo
+*/
+.div1::before {
+    content: "";                /* Necessário para pseudoelementos, mesmo vazio */
+    position: absolute;         /* Posiciona absolutamente em relação à div1 */
+    top: 0;                     /* Alinha ao topo */
+    left: 0;                    /* Alinha à esquerda */
+    width: 100%;                /* Largura total */
+    height: 100%;               /* Altura total */
+    /* Cria um padrão de círculos usando SVG inline (otimizado, não requer arquivo externo) */
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.05"><circle cx="50" cy="50" r="40" fill="white"/></svg>');
+    background-size: 200px;     /* Tamanho do padrão de repetição */
+    opacity: 0.1;               /* Torna o padrão quase transparente para efeito sutil */
+}
+
+/* Estiliza o título principal na área roxa */
+.div1 h1 {
+    font-size: 2.5rem;          /* Tamanho grande de fonte (2.5x o tamanho padrão) */
+    margin-bottom: 15px;        /* Espaçamento abaixo do título */
+}
+
+/* Estiliza o parágrafo na área roxa */
+.div1 p {
+    font-size: 1.2rem;          /* Tamanho de fonte aumentado para destaque */
+    margin-bottom: 40px;        /* Espaçamento abaixo do parágrafo */
+    opacity: 0.9;               /* Leve transparência para contraste suave */
+}
+
+
+
+.div2 {
+    grid-column: 3 / 6;         /* Posiciona no grid: começa na coluna 3 e vai até a 6 */
+    grid-row: 1 / 6;            /* Posiciona no grid: da linha 1 até a 6 */
+    display: flex;              /* Flexbox para centralizar conteúdo */
+    justify-content: center;    /* Centraliza horizontalmente */
+    align-items: center;        /* Centraliza verticalmente */
+    background-color: white;    /* Fundo branco para contraste com a área roxa */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05); /* Sombra suave à esquerda para profundidade */
+}
+
+/*
+   Formulário
+   Estiliza o formulário dentro da área de login
+*/
+.div2 form {
+    width: 70%;                 /* Largura de 70% do container pai */
+    display: flex;              /* Flexbox para organizar os campos */
+    flex-direction: column;     /* Organiza os elementos em coluna */
+    gap: 25px;                  /* Espaço de 25px entre os elementos filhos */
+}
+
+/* Estiliza o título do formulário */
+.login h1 {
+    text-align: center;         /* Centraliza o texto */
+    color: #333;                /* Cor cinza escuro para o texto */
+    margin-bottom: 30px;        /* Espaçamento abaixo */
+    font-size: 1.8rem;          /* Tamanho de fonte aumentado */
+    position: relative;         /* Permite posicionar o pseudoelemento after */
+}
+
+/* Cria uma linha decorativa abaixo do título */
+.login h1:after {
+    content: "";                /* Necessário para pseudoelementos */
+    display: block;             /* Faz o elemento se comportar como bloco */
+    width: 50px;                /* Largura da linha */
+    height: 3px;                /* Altura/espessura da linha */
+    background: linear-gradient(to right, #4A00E0, #8E2DE2); /* Gradiente roxo */
+    margin: 10px auto 0;        /* Espaçamento: 10px topo, automático laterais, 0 bottom */
+}
+
+/*
+   Cada campo do formulário
+   Container para label + input
+*/
+.campo {
+    display: flex;              /* Flexbox para organizar os elementos */
+    flex-direction: column;     /* Organiza em coluna (label acima do input) */
+}
+
+/* Estiliza as labels dos campos */
+.campo label {
+    font-weight: 600;           /* Texto em negrito */
+    margin-bottom: 8px;         /* Espaçamento abaixo da label */
+    color: #555;                /* Cor cinza médio */
+    font-size: 0.9rem;          /* Tamanho de fonte ligeiramente menor */
+}
+
+/* Estiliza os inputs do formulário */
+.campo input {
+    padding: 15px;              /* Espaçamento interno confortável */
+    border: 1px solid #ddd;     /* Borda cinza clara */
+    border-radius: 5px;         /* Cantos levemente arredondados */
+    font-size: 1rem;            /* Tamanho de fonte legível */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transição suave para foco */
+}
+
+/* Estiliza os inputs quando em foco (selecionados) */
+.campo input:focus {
+    outline: none;              /* Remove contorno padrão do navegador */
+    border-color: #8E2DE2;      /* Muda cor da borda para roxo */
+    box-shadow: 0 0 0 2px rgba(142, 45, 226, 0.2); /* Sombra roxa suave ao redor */
+}
+
+/*
+   Opções checkbox e link
+   Container para "Lembrar-me" e "Esqueci senha"
+*/
+.options {
+    display: flex;              /* Flexbox para alinhar os elementos */
+    justify-content: space-between; /* Espaço entre os elementos (um em cada extremidade) */
+    align-items: center;        /* Alinha verticalmente ao centro */
+}
+
+/* Container para checkbox + label */
+.remember {
+    display: flex;              /* Flexbox para alinhar checkbox e label */
+    align-items: center;        /* Alinha verticalmente ao centro */
+    gap: 8px;                   /* Espaço entre checkbox e label */
+}
+
+/* Estiliza o checkbox personalizado */
+.remember input[type="checkbox"] {
+    width: 18px;                /* Largura personalizada */
+    height: 18px;               /* Altura personalizada */
+    accent-color: #8E2DE2;      /* Cor roxa para o checkbox (navegadores modernos) */
+}
+
+/* Estiliza a label do checkbox */
+.remember label {
+    color: #555;                /* Cor cinza médio */
+    cursor: pointer;            /* Muda cursor para pointer (indicando clicável) */
+}
+
+/* Estiliza o link "Esqueci senha" */
+.options a {
+    color: #8E2DE2;             /* Cor roxa para o link */
+    text-decoration: none;      /* Remove sublinhado padrão */
+    font-size: 0.9rem;          /* Tamanho de fonte ligeiramente menor */
+    transition: color 0.3s;     /* Transição suave para mudança de cor */
+}
+
+/* Efeito hover para o link */
+.options a:hover {
+    color: #4A00E0;             /* Cor roxa mais escura no hover */
+    text-decoration: underline; /* Adiciona sublinhado no hover */
+}
+
+/*
+   Botão entrar
+   Estiliza o botão de submit do formulário
+*/
+.Botao.Entrar {
+    background: linear-gradient(to right, #4A00E0, #8E2DE2); /* Gradiente roxo */
+    color: white;               /* Texto branco */
+    border: none;               /* Remove borda padrão */
+    padding: 15px;              /* Espaçamento interno confortável */
+    border-radius: 5px;         /* Cantos levemente arredondados */
+    cursor: pointer;            /* Indica elemento clicável */
+    font-size: 1.1rem;          /* Tamanho de fonte aumentado */
+    font-weight: 600;           /* Texto em negrito */
+    transition: transform 0.2s, box-shadow 0.2s; /* Animações suaves */
+    margin-top: 10px;           /* Espaçamento acima */
+}
+
+/* Efeito hover para o botão */
+.Botao.Entrar:hover {
+    transform: translateY(-2px); /* Move o botão 2px para cima */
+    box-shadow: 0 5px 15px rgba(142, 45, 226, 0.3); /* Adiciona sombra roxa */
+}
+
+/* Container para o link de cadastro no final do formulário */
+.register-link {
+    text-align: center;         /* Centraliza o texto */
+    margin-top: 20px;           /* Espaçamento acima */
+}
+
+/* Estiliza o texto do link de cadastro */
+.register-link p {
+    color: #555;                /* Cor cinza médio */
+    font-size: 0.9rem;          /* Tamanho de fonte ligeiramente menor */
+}
+
+/* Estiliza o link de cadastro */
+.register-link a {
+    color: #8E2DE2;             /* Cor roxa */
+    text-decoration: none;      /* Remove sublinhado padrão */
+    font-weight: 600;           /* Texto em negrito */
+}
+
+/* Efeito hover para o link de cadastro */
+.register-link a:hover {
+    text-decoration: underline; /* Adiciona sublinhado no hover */
+}
+
+/*
+   Responsividade
+   Ajusta o layout para telas menores (até 900px de largura)
+*/
+@media (max-width: 900px) {
+    .parent {
+        grid-template-columns: 1fr;     /* Muda para uma única coluna */
+        grid-template-rows: 1fr 2fr;    /* Duas linhas: 1 parte para welcome, 2 partes para form */
+    }
+
+    .div1 {
+        grid-column: 1;         /* Ocupa a primeira coluna */
+        grid-row: 1;            /* Ocupa a primeira linha */
+        padding: 30px;          /* Reduz um pouco o padding */
+    }
+
+    .div2 {
+        grid-column: 1;         /* Ocupa a primeira coluna */
+        grid-row: 2;            /* Ocupa a segunda linha */
+        padding: 20px;          /* Reduz um pouco o padding */
+    }
+
+    .div2 form {
+        width: 90%;             /* Aumenta a largura do formulário em telas pequenas */
+    }
+.logo {
+    max-width: 180px;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.illustration-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Se quiser adicionar um efeito suave */
+.logo {
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
 }
