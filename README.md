@@ -90,15 +90,27 @@ No início, o foco será em restaurantes locais, com o objetivo de facilitar res
 | dataCriacao     | data/hora                     | sim         | 2025-08-20 14:30   |
 | dataAtualizacao | data/hora                     | sim         | 2025-08-20 15:10   |
 
-### Chamado
+### Estabelecimento 
 | Campo               | Tipo               | Obrigatório | Exemplo                 |
 |-----------------    |--------------------|-------------|-------------------------|
-| id                  | número             | sim         | 2                       |
+| id                  | número             | sim         | 1                       |
+| Nome                | texto              | sim         | "Restaurante1"          |
+| Endereco            | texto              | sim         | "rua teste"             |
+| HorarioAbertura     | data/hora          | sim         | 2025-08-20 14:35        |
+| DataFechamento      | char               | sim         | 2025-08-20 14:35        |
+| dataCriacao         | data/hora          | sim         | 2025-08-20 14:50        |
+| dataAtualizacao     | data/hora          | sim         | 2025-08-20 14:50        |
+
+### Reserva
+| Campo               | Tipo               | Obrigatório | Exemplo                 |
+|-----------------    |--------------------|-------------|-------------------------|
+| id                  | número             | sim         | 1                       |
 | Usuario_id          | número (fk)        | sim         | 1                       |
 | estabelecimento_id  | número (fk)        | sim         | 3                       |
 | dataHora            | data/hora          | sim         | 2025-08-20 14:35        |
-| status              | char               | sim         | a | b                   |
+| status              | char               | sim         |a = ativo | c = cancelado|
 | dataCriacao         | data/hora          | sim         | 2025-08-20 14:50        |
+| dataAtualizacao     | data/hora          | sim         | 2025-08-20 14:50        |
 
 ### 9.3 Relações entre entidades
 - Um Usuario tem muitas Reservas (1→N)  
