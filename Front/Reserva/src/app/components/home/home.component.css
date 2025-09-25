@@ -1,0 +1,144 @@
+.home-container {
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  background: linear-gradient(135deg, #6a0dad, #4b0082);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #4b0082;
+  padding: 15px 40px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #fff;
+}
+
+.header nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header nav a:hover {
+  text-decoration: underline;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #e0e0e0;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.hero button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-reserva {
+  background: #ffffff;
+  color: #4b0082;
+   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-reserva:hover {
+  background: #e0e0e0;
+  transform: scale(1.05); /* aumenta 5% ao passar o mouse */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.btn-funcionario {
+  background: #6a0dad;
+  color: #ffffff;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+.btn-funcionario:hover {
+  background: #4b0082;
+  transform: scale(1.05); /* aumenta 5% ao passar o mouse */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* FEATURES */
+.features {
+  padding: 100px 20px 60px; /* mais espaçamento do topo */
+  background: none;          /* sem fundo de ponta a ponta */
+  display: flex;
+  justify-content: center;
+}
+
+.features-container {
+  max-width: 1000px;        /* container centralizado */
+  width: 100%;
+  text-align: center;
+}
+
+.features-container h2 {
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: #ffffff;
+}
+
+.features-cards {
+  display: flex;
+  justify-content: space-between; /* distribui os cards com espaço */
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #ffffff;
+  color: #4b0082;
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1 1 250px; /* cada card ocupa no mínimo 250px */
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.05); /* aumenta 5% ao passar o mouse */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #4b0082;
+  margin-top: auto;
+}
