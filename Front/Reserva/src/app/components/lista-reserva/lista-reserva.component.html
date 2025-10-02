@@ -1,18 +1,27 @@
-<h2 class="text-center my-3">Lista de Reservas</h2>
-
-<table class="table table-striped">
-  <thead class="table-dark">
-    <tr>
-      <th class="text-start" style="width: 16%;">ID</th>
-      <th class="text-center" style="width: 60%;">Nome</th>
-      <th class="text-end" style="width: 20%;">Horário</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let reserva of reserva">
-      <td class="text-start">{{ reserva.id }}</td>
-      <td class="text-center">{{ reserva.nome }}</td>
-      <td class="text-end">{{ reserva.horario }}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="container my-4">
+  <div class="card shadow-lg rounded-3">
+    <div class="card-header bg-primary text-white text-center">
+      <h2 class="mb-0"> Lista de Reservas</h2>
+    </div>
+    <div class="card-body p-0">
+      <table class="table table-hover mb-0 align-middle text-center">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col" style="width: 15%;">ID</th>
+            <th scope="col" style="width: 55%;">Nome</th>
+            <th scope="col" style="width: 30%;">Horário</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reserva of reserva">
+            <td class="fw-bold text-start ps-3">{{ reserva.id }}</td>
+            <td>{{ reserva.nome }}</td>
+            <td class="text-end pe-3">
+              <span class="badge bg-success fs-6">{{ reserva.horario }}</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
