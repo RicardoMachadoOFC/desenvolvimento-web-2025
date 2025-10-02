@@ -1,0 +1,18 @@
+<h2 class="text-center my-3">Lista de Reservas</h2>
+
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th class="text-start" style="width: 16%;">ID</th>
+      <th class="text-center" style="width: 60%;">Nome</th>
+      <th class="text-end" style="width: 20%;">Horário</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let reserva of reserva">
+      <td class="text-start">{{ reserva.id }}</td>
+      <td class="text-center">{{ reserva.nome }}</td>
+      <td class="text-end">{{ reserva.horario }}</td>
+    </tr>
+  </tbody>
+</table>
