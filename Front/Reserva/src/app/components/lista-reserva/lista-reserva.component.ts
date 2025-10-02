@@ -15,10 +15,22 @@ export class ListaReservaComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.reserva = [
-      { id: 1, nome: 'João', horario: '10:00' },
-      { id: 2, nome: 'Maria', horario: '11:30' },
-      { id: 3, nome: 'Carlos', horario: '14:00' }
+    this.reserva = [{
+      "id": 1,
+      "nome": "João",
+      "horario": "10:00"
+    },
+
+    {"id": 2,
+      "nome": "Maria",
+      "horario": "11:30"
+
+    },
+    {"id": 3,
+       "nome": "Carlos",
+        "horario": "14:00"
+      }
+
     ];
   }
 
