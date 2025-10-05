@@ -1,15 +1,18 @@
 <div class="container my-4">
   <div class="card shadow-lg rounded-3">
     <div class="card-header bg-primary text-white text-center">
-      <h2 class="mb-0"> Lista de Reservas</h2>
+      <h2 class="mb-0">Lista de Reservas</h2>
     </div>
     <div class="card-body p-0">
-      <table class="table table-hover mb-0 align-middle text-center">
+      <div *ngIf="loading" class="p-3 text-center">Carregando reservas...</div>
+      <div *ngIf="error" class="p-3 text-danger text-center">Erro: {{ error }}</div>
+    <table class="table table-hover mb-0 align-middle text-center">
         <thead class="table-dark">
           <tr>
-            <th scope="col" style="width: 15%;">ID</th>
-            <th scope="col" style="width: 55%;">Nome</th>
-            <th scope="col" style="width: 30%;">Horário</th>
+            <th scope="col" style="width: 25%;">ID</th>
+            <th scope="col" style="width: 25%;">Nome</th>
+            <th scope="col" style="width: 25%;">Horário</th>
+            <th scope="col" style="width: 25%;">Email</th>
           </tr>
         </thead>
         <tbody>
@@ -17,8 +20,9 @@
             <td class="fw-bold text-start ps-3">{{ reserva.id }}</td>
             <td>{{ reserva.nome }}</td>
             <td class="text-end pe-3">
-              <span class="badge bg-success fs-6">{{ reserva.horario }}</span>
+              <span class="badge bg-success fs-6">{{ formatHorario(reserva) }}</span>
             </td>
+            <td>{{reserva.email }} </td>
           </tr>
         </tbody>
       </table>

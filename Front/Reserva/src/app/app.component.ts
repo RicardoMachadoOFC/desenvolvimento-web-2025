@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { ListaReservaComponent } from "./components/lista-reserva/lista-reserva.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,LoginComponent, HomeComponent],
+  imports: [RouterOutlet, LoginComponent, HomeComponent, ListaReservaComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
