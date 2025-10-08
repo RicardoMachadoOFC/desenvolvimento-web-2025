@@ -3,14 +3,15 @@ import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListaReservaComponent } from "./components/lista-reserva/lista-reserva.component";
+import { PerfilComponent } from './perfil/perfil.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LoginComponent, HomeComponent, ListaReservaComponent],
+  imports: [RouterOutlet, LoginComponent, HomeComponent, ListaReservaComponent, PerfilComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Reserva';
+  title = 'Meu App Angular';
 }

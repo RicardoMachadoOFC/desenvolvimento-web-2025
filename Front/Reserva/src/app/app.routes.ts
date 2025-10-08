@@ -3,6 +3,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { ReservaComponent } from './reserva.component';
 import { ListaReservaComponent } from './components/lista-reserva/lista-reserva.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 export const routes: Routes = [
  {
@@ -25,6 +26,10 @@ export const routes: Routes = [
     redirectTo: "login",
     pathMatch: "full"
   },
+  {
+    path: "perfil",
+    component: PerfilComponent
+  }
 
 
 

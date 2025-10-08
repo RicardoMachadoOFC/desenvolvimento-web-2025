@@ -1,0 +1,54 @@
+<div class="container">
+
+  <!-- Perfil -->
+  <div class="card p-3 mb-3">
+    <h4>{{ nome }}</h4>
+    <button class="btn btn-primary mb-2" (click)="alternarBio()">
+      {{ mostrarBio ? 'Ocultar Perfil' : 'Mostrar Perfil' }}
+    </button>
+    <p *ngIf="mostrarBio">{{ bio }}</p>
+
+    <!-- Editar perfil -->
+    <div class="mb-2">
+      <input class="form-control mb-1" [(ngModel)]="novoNome" placeholder="Editar nome">
+      <button class="btn btn-success btn-sm" (click)="confirmarNome()">Confirmar Nome</button>
+    </div>
+    <div class="mb-2">
+      <input class="form-control mb-1" [(ngModel)]="novaBio" placeholder="Editar bio">
+      <button class="btn btn-success btn-sm" (click)="confirmarBio()">Confirmar Bio</button>
+    </div>
+  </div>
+
+  <!-- Contador -->
+  <div class="card p-3 mb-3">
+    <h4>Contador: {{ contador }}</h4>
+    <input type="number" class="form-control mb-2" [(ngModel)]="passo" placeholder="Passo">
+    <button class="btn btn-success me-2" (click)="incrementar()">+</button>
+    <button class="btn btn-danger" (click)="decrementar()">-</button>
+  </div>
+
+  <!-- NovoPost e Feed filtrável -->
+  <div class="card p-3 mb-3">
+    <h4>Adicionar Post</h4>
+    <input class="form-control mb-2" #autor placeholder="Autor">
+    <input class="form-control mb-2" #conteudo placeholder="Conteúdo">
+    <button class="btn btn-primary mb-3"
+            (click)="adicionarPost(autor.value, conteudo.value); autor.value=''; conteudo.value=''">
+      Publicar
+    </button>
+
+    <!-- Filtros -->
+    <input class="form-control mb-2" [(ngModel)]="filtroAutor" placeholder="Filtrar por autor">
+    <input class="form-control mb-2" [(ngModel)]="filtroConteudo" placeholder="Filtrar por conteúdo">
+
+    <!-- Feed -->
+    <div *ngFor="let post of postsFiltrados" class="card p-2 mb-2">
+      <h6>{{ post.autor }}</h6>
+      <p>{{ post.conteudo }}</p>
+      <button class="btn btn-sm btn-primary" (click)="curtir(post)">
+        Curtir ({{ post.likes }})
+      </button>
+    </div>
+  </div>
+
+</div>
