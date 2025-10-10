@@ -9,13 +9,13 @@ import { Reserva } from '../../reserva';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './lista-reserva.component.html',
-  styleUrls: ['./lista-reserva.component.css'] // corrigido
+  styleUrls: ['./lista-reserva.component.css']
 })
 export class ListaReservaComponent implements OnInit {
   reserva: Reserva[] = [];
   loading: boolean = false;
   error: string | null = null;
-  // rawData removido depois do debug
+
 
   constructor(private reservaService: ReservaService) { }
 
@@ -25,31 +25,37 @@ export class ListaReservaComponent implements OnInit {
   }
 
   formatHorario(r: Reserva): string {
-  // Prioriza horarioReserva (do backend), se for nulo, usa horario antigo
+  // Prioriza horarioReserva do backend que estava dando problema
   const raw = r.horarioReserva ?? r.horario;
   if (!raw) return 'Sem horário';
 
   const d = new Date(raw);
 
   if (isNaN(d.getTime())) {
-    return raw; // Caso o formato seja inválido
+    return raw; // SE FOR INVALIDO
   }
 
-  // Formata data e hora: 05/10/2025 14:30
+  // Formata data e hora
   const data = d.toLocaleDateString('pt-BR');
   const hora = d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
 
   return `${data} ${hora}`;
 }
   private getReserva() {
-  this.loading = true;
+
+
+  this.loading = true; //  aparece que esta carregando enquanto o backend ainda está começando a carregar
+
   this.error = null;
+
     this.reservaService.getReservaList().subscribe({
       next: data => {
-  console.log('Dados recebidos do backend:', data);
+  console.log('dados recebidos do backend:', data);
   this.reserva = data;
         this.loading = false;
       },
+
+
       error: err => {
         console.error('Erro ao buscar reservas:', err);
         this.error = (err && err.message) ? err.message : 'Erro desconhecido ao buscar reservas';
