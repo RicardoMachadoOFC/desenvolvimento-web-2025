@@ -1,0 +1,86 @@
+/* ======= Estilo geral ======= */
+.container {
+  max-width: 950px;
+  margin: 2rem auto;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+/* ======= Card ======= */
+.card {
+  border: none;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+}
+
+
+.card-header {
+  background: linear-gradient(135deg, #007bff, #00bfff);
+  color: white;
+  text-align: center;
+  padding: 1.2rem;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* ======= Tabela ======= */
+.table {
+  margin-bottom: 0;
+}
+
+.table th {
+  background-color: #222;
+  color: #fff;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 1rem 0.5rem;
+}
+
+.table td {
+  padding: 1rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+
+
+/* ======= Badge de horário ======= */
+.badge.bg-success {
+  background: linear-gradient(135deg, #28a745, #00c853) !important;
+  padding: 0.6em 1em;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+/* ======= Mensagens ======= */
+.text-danger {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ======= Responsividade ======= */
+@media (max-width: 768px) {
+  .card {
+    margin: 1rem;
+  }
+
+  .table th,
+  .table td {
+    font-size: 0.85rem;
+    padding: 0.7rem;
+  }
+
+  .card-header h2 {
+    font-size: 1.3rem;
+  }
+}
