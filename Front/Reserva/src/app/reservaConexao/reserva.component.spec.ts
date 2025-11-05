@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReservaComponent } from './reserva.component';
+import { ReservaComponent } from './reservaConexao/reserva.component';
 
 describe('ReservaComponent', () => {
   let component: ReservaComponent;

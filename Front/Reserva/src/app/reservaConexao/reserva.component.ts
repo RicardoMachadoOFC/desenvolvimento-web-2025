@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ListaReservaComponent } from "./components/lista-reserva/lista-reserva.component";
-import { RouterOutlet } from "../../node_modules/@angular/router/index";
+import { ListaReservaComponent } from "../components/lista-reserva/lista-reserva.component";
+import { RouterOutlet } from "@angular/router";
 
 @Component({
   selector: 'app-reserva',

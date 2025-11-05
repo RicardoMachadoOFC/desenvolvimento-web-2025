@@ -8,7 +8,7 @@ import { Reserva } from './reserva';
 })
 export class ReservaService {
 
-  // Usar URL absoluta do backend em desenvolvimento para evitar problemas de proxy/CORS
+  // Usar URL do backend em desenvolvimento para evitar problemas de proxy/CORS
   // Mantenha ou altere para variável de ambiente em produção.
   private baseURL = 'http://localhost:8080/api/v1/reservas';
   constructor(private httpCliente: HttpClient) { }

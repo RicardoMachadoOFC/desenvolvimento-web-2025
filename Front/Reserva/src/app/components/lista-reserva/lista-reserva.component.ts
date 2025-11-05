@@ -1,7 +1,7 @@
-import { ReservaService } from './../../reserva.service';
+import { ReservaService } from './../../reservaConexao/reserva.service';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Reserva } from '../../reserva';
+import { Reserva } from '../../reservaConexao/reserva';
 
 
 @Component({
