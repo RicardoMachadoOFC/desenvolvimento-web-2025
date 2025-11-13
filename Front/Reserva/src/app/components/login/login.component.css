@@ -14,14 +14,14 @@ html, body {
 .parent {
   display: flex;
   width: 100%;
-  height: 100vh; /* ocupa a tela toda */
+  height: 100vh;
 }
 
 /* Área esquerda - boas-vindas */
 .div1 {
   flex: 1;
-  background: linear-gradient(135deg, #4A00E0, #8E2DE2);
-  color: white;
+  background: linear-gradient(135deg, #A4133C, #3B0D11); /* bordô elegante */
+  color: #FFF4F1; /* bege claro */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,7 +42,7 @@ html, body {
 /* Área direita - login */
 .div2 {
   flex: 1;
-  background: white;
+  background: #FFF4F1; /* bege suave */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,7 +58,7 @@ form {
 
 .login h1 {
   text-align: center;
-  color: #333;
+  color: #A4133C;
   margin-bottom: 10px;
 }
 
@@ -71,16 +71,18 @@ form {
 .campo label {
   font-weight: 600;
   margin-bottom: 5px;
+  color: #3B0D11;
 }
 
 .campo input {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  background: #fff;
 }
 
 .campo input:focus {
-  border-color: #8E2DE2;
+  border-color: #A4133C;
   outline: none;
 }
 
@@ -92,13 +94,17 @@ form {
 }
 
 .options a {
-  color: #8E2DE2;
+  color: #A4133C;
   text-decoration: none;
+}
+
+.options a:hover {
+  text-decoration: underline;
 }
 
 /* Botão */
 .Botao.Entrar {
-  background: linear-gradient(to right, #4A00E0, #8E2DE2);
+  background: linear-gradient(to right, #A4133C, #E5383B);
   color: white;
   border: none;
   padding: 12px;
@@ -119,11 +125,15 @@ form {
 }
 
 .register-link a {
-  color: #8E2DE2;
+  color: #A4133C;
   text-decoration: none;
 }
 
-/* Responsivo: empilha no mobile */
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo */
 @media (max-width: 900px) {
   .parent {
     flex-direction: column;
@@ -134,5 +144,9 @@ form {
     width: 100%;
     padding: 30px;
     text-align: center;
+  }
+
+  .div1 {
+    align-items: center;
   }
 }

@@ -1,29 +1,30 @@
-/* CONTAINER PRINCIPAL */
+/* ======= CONTAINER PRINCIPAL ======= */
 .home-container {
-  font-family: 'Arial', sans-serif;
-  color: #ffffff;
-  background: linear-gradient(135deg, #6a0dad, #4b0082);
+  font-family: 'Poppins', sans-serif;
+  color: #FFF4F1;
+  background: linear-gradient(135deg, #A4133C, #3B0D11);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* HEADER */
+/* ======= HEADER ======= */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #4b0082;
+  background: #3B0D11;
   padding: 15px 40px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .header h1 {
   font-size: 28px;
+  color: #FFF4F1;
 }
 
 .header nav a {
-  color: #ffffff;
+  color: #FFF4F1;
   margin-left: 20px;
   text-decoration: none;
   font-weight: bold;
@@ -31,10 +32,10 @@
 }
 
 .header nav a:hover {
-  color: #9b59b6; /* mesma cor do botão reserva */
+  color: #E5383B;
 }
 
-/* HERO */
+/* ======= HERO ======= */
 .hero {
   text-align: center;
   padding: 100px 20px;
@@ -43,12 +44,13 @@
 .hero h2 {
   font-size: 42px;
   margin-bottom: 20px;
+  color: #FFF4F1;
 }
 
 .hero p {
   font-size: 18px;
   margin-bottom: 40px;
-  color: #ddd;
+  color: #f3e1df;
 }
 
 .hero-buttons {
@@ -67,36 +69,37 @@
   transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
 }
 
-/* BOTÃO RESERVA - GRADIENTE LILÁS */
+/* ======= BOTÕES ======= */
 .btn-reserva {
-  background: linear-gradient(135deg, #9b59b6, #8e44ad);
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #A4133C, #E5383B);
+  color: #FFF4F1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .btn-reserva:hover {
-  background: linear-gradient(135deg, #8e44ad, #7d3c98);
+  background: linear-gradient(135deg, #E5383B, #A4133C);
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* BOTÃO FUNCIONÁRIO - MESMA COR DO RESERVA */
 .btn-funcionario {
-  background: linear-gradient(135deg, #9b59b6, #8e44ad);
-  color: #ffffff;
-  border: 2px solid #ffffff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #A4133C, #E5383B);
+  color: #FFF4F1;
+  border: 2px solid #FFF4F1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .btn-funcionario:hover {
-  background: linear-gradient(135deg, #8e44ad, #7d3c98);
+  background: linear-gradient(135deg, #E5383B, #A4133C);
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* FEATURES / DESTAQUES */
+/* ======= FEATURES / DESTAQUES ======= */
 .features {
   padding: 80px 20px;
+  background: #FFF4F1;
+  color: #3B0D11;
 }
 
 .features-container {
@@ -108,7 +111,7 @@
 .features-container h2 {
   margin-bottom: 50px;
   font-size: 32px;
-  color: #9b59b6; /* mesma cor do botão reserva */
+  color: #A4133C;
 }
 
 .features-items {
@@ -132,12 +135,12 @@
 .feature-item h3 {
   margin-bottom: 10px;
   font-size: 20px;
-  color: #ffffff;
+  color: #A4133C;
 }
 
 .feature-item p {
   font-size: 16px;
-  color: #ddd;
+  color: #3B0D11;
 }
 
 .feature-item:hover {
@@ -148,11 +151,11 @@
   transform: scale(1.1);
 }
 
-/* FOOTER */
+/* ======= FOOTER ======= */
 .footer {
   text-align: center;
   padding: 20px;
-  background: #4b0082;
+  background: #3B0D11;
   margin-top: auto;
-  color: #9b59b6; /* mesma cor do botão reserva */
+  color: #E5383B;
 }

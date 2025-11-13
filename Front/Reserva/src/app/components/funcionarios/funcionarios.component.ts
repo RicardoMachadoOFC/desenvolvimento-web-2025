@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-funcionarios',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [CommonModule,RouterOutlet],
   templateUrl: './funcionarios.component.html',
-  styleUrl: './funcionarios.component.css'
+  styleUrls: ['./funcionarios.component.css']
 })
-export class FuncionariosComponent {
-
-}
+export class FuncionariosComponent { }

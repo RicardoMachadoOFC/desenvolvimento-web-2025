@@ -1,0 +1,140 @@
+/* ======= Estilo geral ======= */
+.container {
+  max-width: 950px;
+  margin: 2rem auto;
+  font-family: "Poppins", sans-serif;
+  color: #3B0D11;
+}
+
+/* ======= Card ======= */
+.card {
+  border: none;
+  border-radius: 15px;
+  background: #FFF4F1; /* bege suave */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* ======= Cabeçalho ======= */
+.card-header {
+  background: linear-gradient(135deg, #A4133C, #E5383B);
+  color: #FFF4F1;
+  text-align: center;
+  padding: 1.2rem;
+  border-bottom: none;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ======= Corpo ======= */
+.card-body {
+  background-color: #ffffff;
+  padding: 2rem;
+}
+
+/* ======= Botão "Novo" ======= */
+.btn-success {
+  background: linear-gradient(135deg, #E5383B, #A4133C);
+  border: none;
+  color: #FFF4F1;
+  font-weight: 500;
+  padding: 0.6em 1.2em;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #A4133C, #800F2F);
+  transform: scale(1.05);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+}
+
+/* ======= Tabela ======= */
+.table {
+  margin-bottom: 0;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th {
+  background-color: #A4133C;
+  color: #FFF4F1;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 1rem 0.5rem;
+  border: none;
+}
+
+.table td {
+  padding: 1rem;
+  border-top: 1px solid #e5e5e5;
+  vertical-align: middle;
+  color: #3B0D11;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #FFF0EC;
+}
+
+.table-striped tbody tr:hover {
+  background-color: #FFE6E1;
+  transition: 0.2s;
+}
+
+/* ======= Ações ======= */
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0.5em 1em;
+  font-weight: 500;
+  color: #fff;
+  transition: 0.25s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Botão editar */
+.btn-warning {
+  background: linear-gradient(135deg, #F4A261, #E76F51);
+}
+
+.btn-warning:hover {
+  background: linear-gradient(135deg, #E76F51, #C85D3E);
+}
+
+/* Botão excluir */
+.btn-danger {
+  background: linear-gradient(135deg, #D00000, #9D0208);
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, #9D0208, #6A040F);
+}
+
+/* para responsividade */
+@media (max-width: 768px) {
+  .card {
+    margin: 1rem;
+  }
+
+  .table th,
+  .table td {
+    font-size: 0.85rem;
+    padding: 0.7rem;
+  }
+
+  .card-header h2 {
+    font-size: 1.3rem;
+  }
+}
