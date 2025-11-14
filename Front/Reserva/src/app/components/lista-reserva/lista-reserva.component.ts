@@ -25,7 +25,7 @@ export class ListaReservaComponent implements OnInit {
   }
 
   formatHorario(r: Reserva): string {
-  // Prioriza horarioReserva do backend que estava dando problema
+  // Prioriza horarioReserva do backend que estava dando problema, sinceramente não soube como resolver de outra forma a conversão
   const raw = r.horarioReserva ?? r.horario;
   if (!raw) return 'Sem horário';
 
@@ -35,7 +35,7 @@ export class ListaReservaComponent implements OnInit {
     return raw; // SE FOR INVALIDO
   }
 
-  // Formata data e hora
+  // Formata data e hora que estava em string
   const data = d.toLocaleDateString('pt-BR');
   const hora = d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
 

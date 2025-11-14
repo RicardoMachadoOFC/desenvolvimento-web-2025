@@ -1,4 +1,4 @@
-/* ======= Estilo geral ======= */
+
 .container {
   max-width: 950px;
   margin: 2rem auto;
@@ -6,7 +6,7 @@
   color: #3B0D11;
 }
 
-/* ======= Card ======= */
+
 .card {
   border: none;
   border-radius: 15px;
@@ -15,7 +15,7 @@
   overflow: hidden;
 }
 
-/* ======= Cabeçalho ======= */
+
 .card-header {
   background: linear-gradient(135deg, #A4133C, #E5383B);
   color: #FFF4F1;
@@ -30,7 +30,7 @@
   letter-spacing: 1px;
 }
 
-/* ======= Corpo ======= */
+
 .card-body {
   background-color: #ffffff;
   padding: 2rem;
